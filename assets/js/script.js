@@ -67,7 +67,7 @@ const music_list = [
   },
   {
     img: "./assets/img/ballin.jpg",
-    name: "Ballin’",
+    name: "Ballin'",
     artist: "Mustard, Roddy Ricch",
     music: "./assets/audio/ballin.mp3",
   },
@@ -97,7 +97,7 @@ const music_list = [
   },
   {
     img: "./assets/img/hb.jpg",
-    name: "I´m Gonna Be",
+    name: "I'm Gonna Be",
     artist: "Post Malone",
     music: "./assets/audio/igb.mp3",
   },
