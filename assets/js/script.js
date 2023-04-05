@@ -1,3 +1,4 @@
+// Query Selectors
 let now_playing = document.querySelector(".now-playing");
 let track_art = document.querySelector(".track-art");
 let track_name = document.querySelector(".track-name");
@@ -11,11 +12,20 @@ let curr_time = document.querySelector(".current-time");
 let total_duration = document.querySelector(".total-duration");
 let randomIcon = document.querySelector(".fa-random");
 let curr_track = document.createElement("audio");
+
+// Track Index
 let track_index = 0;
+
+// Playing
 let isPlaying = false;
+
+// Random
 let isRandom = false;
+
+// Update Timer
 let updateTimer;
 
+// Create the list of tracks
 const music_list = [
   {
     img: "./assets/img/betternow.jpg",
@@ -108,6 +118,12 @@ const music_list = [
     music: "./assets/audio/war.mp3",
   },
   {
+    img: "./assets/img/ewtrtw.jpg",
+    name: "Everybody Wants To Rule The World",
+    artist: "Tears for Fears",
+    music: "./assets/audio/ewtrtw.mp3",
+  },
+  {
     img: "./assets/img/mv.jpg",
     name: "Minha Vida",
     artist: "Caio Luccas",
@@ -131,16 +147,12 @@ const music_list = [
     artist: "Thiaguinho",
     music: "./assets/audio/fv.mp3",
   },
-  {
-    img: "./assets/img/sv.jpg",
-    name: "Sou Vitorioso",
-    artist: "Mc Lele JP, Mc Neguinho do Kaxeta",
-    music: "./assets/audio/sv.mp3",
-  },
 ];
 
+// Load the first track in the tracklist
 loadTrack(track_index);
 
+// Controls Music Function
 function loadTrack(track_index) {
   clearInterval(updateTimer);
   reset();
@@ -154,36 +166,43 @@ function loadTrack(track_index) {
   curr_track.addEventListener("ended", nextTrack);
 }
 
+// Reset Music Function
 function reset() {
   curr_time.textContent = "00:00";
   total_duration.textContent = "0:00";
   seek_slider.value = 0;
 }
 
+// Random Music Function
 function randomTrack() {
   isRandom ? pauseRandom() : playRandom();
 }
 
+// Play Random Music Function
 function playRandom() {
   isRandom = true;
   randomIcon.classList.add("randomActive");
 }
 
+// Pause Random Music Function
 function pauseRandom() {
   isRandom = false;
   randomIcon.classList.remove("randomActive");
 }
 
+// Repeat Music Function
 function repeatTrack() {
   let current_index = track_index;
   loadTrack(current_index);
   playTrack();
 }
 
+// Play/Pause Music Function
 function playpauseTrack() {
   isPlaying ? pauseTrack() : playTrack();
 }
 
+// Play Music Function
 function playTrack() {
   curr_track.play();
   isPlaying = true;
@@ -191,6 +210,7 @@ function playTrack() {
   playpause_btn.innerHTML = '<i class="fa fa-pause-circle"></i>';
 }
 
+// Pause Music Function
 function pauseTrack() {
   curr_track.pause();
   isPlaying = false;
@@ -198,6 +218,22 @@ function pauseTrack() {
   playpause_btn.innerHTML = '<i class="fa fa-play-circle"></i>';
 }
 
+// Content Tippy.js
+const playBtn = tippy(playpause_btn, {
+  content: "Play",
+  click: false,
+  placement: "top",
+});
+
+// Update Tippy.js
+function updateTippyText() {
+  isPlaying.paused ? playBtn.setContent("Play") : playBtn.setContent("Pausar");
+}
+
+// Event Listener
+playpause_btn.addEventListener("click", updateTippyText);
+
+// Next Music Function
 function nextTrack() {
   if (track_index < music_list.length - 1 && isRandom === false) {
     track_index += 1;
@@ -211,6 +247,7 @@ function nextTrack() {
   playTrack();
 }
 
+// Previous Music Function
 function prevTrack() {
   if (track_index > 0) {
     track_index -= 1;
@@ -221,15 +258,18 @@ function prevTrack() {
   playTrack();
 }
 
+// Change Music Time Function
 function seekTo() {
   let seekto = curr_track.duration * (seek_slider.value / 100);
   curr_track.currentTime = seekto;
 }
 
+// Change Music Volume Function
 function setVolume() {
   curr_track.volume = volume_slider.value / 100;
 }
 
+// Update Music Time Function
 function setUpdate() {
   let seekPosition = 0;
   if (!isNaN(curr_track.duration)) {

@@ -94,9 +94,13 @@ a:hover {
 
 .now-playing {
   font-size: 1rem;
+  font-weight: 500;
 }
 
 .track-name {
+  display: flex;
+  text-align: center;
+  padding: 0 0.6rem;
   font-weight: 800;
   font-size: 1.6rem;
 }
@@ -121,8 +125,8 @@ a:hover {
 .next-track {
   font-size: 2rem;
   padding: 0 18px;
-  color: var(--details-color);
-  opacity: 0.8;
+  color: var(--text-color);
+  opacity: 0.7;
   transition: opacity 0.2s;
 }
 
@@ -135,8 +139,8 @@ a:hover {
 }
 
 .playpause-track {
-  color: #fff;
   font-size: 5rem;
+  opacity: 1;
   transition: 0.4s;
 }
 
