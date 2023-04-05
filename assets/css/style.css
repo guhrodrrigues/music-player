@@ -298,10 +298,6 @@ i.fa-volume-up {
   .playpause-track {
     font-size: 4rem;
   }
-
-  .tippy-popper {
-    display: none;
-  }
 }
 
 @media (max-height: 558px) {

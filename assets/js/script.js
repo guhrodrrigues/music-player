@@ -218,21 +218,6 @@ function pauseTrack() {
   playpause_btn.innerHTML = '<i class="fa fa-play-circle"></i>';
 }
 
-// Content Tippy.js
-const playBtn = tippy(playpause_btn, {
-  content: "Play",
-  click: false,
-  placement: "top",
-});
-
-// Update Tippy.js
-function updateTippyText() {
-  isPlaying.paused ? playBtn.setContent("Play") : playBtn.setContent("Pausar");
-}
-
-// Event Listener
-playpause_btn.addEventListener("click", updateTippyText);
-
 // Next Music Function
 function nextTrack() {
   if (track_index < music_list.length - 1 && isRandom === false) {
