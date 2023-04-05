@@ -100,7 +100,7 @@ a:hover {
 .track-name {
   display: flex;
   text-align: center;
-  padding: 0 0.6rem;
+  padding: 0 1.5rem;
   font-weight: 800;
   font-size: 1.6rem;
 }
