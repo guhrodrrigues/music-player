@@ -1,9 +1,16 @@
-<h1 align="center">Music Player 💿</h1>
-   
-<h3 align="center">Click <a href="https://projects-gustavo.github.io/music-player/">here</a></h3>   
-<img src="https://cdn.discordapp.com/attachments/876799799255531523/1084916961802194954/mp.jpg">
 <div align="center">
-    <img src="https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white" />
-    <img src="https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white" />
-    <img src="https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E" />
+
+![Music Player image](./assets/img/musicplayer.png)
+
+</div>
+
+<div align="center"><strong>Music Player</strong></div>
+<div align="center">Music is always present in my life, <br /> so on this site you can listen to my favorite songs. <br /> Access <a href="https://guhrodriguess.github.io/music-player/">here</a>.</div>
+
+<br />
+
+<div align="center">
+
+[![My Skills](https://skillicons.dev/icons?i=html,css,javascript)](https://skillicons.dev)
+
 </div>
