@@ -1,16 +1,9 @@
-<div align="center">
+## Music Player
 
-![Music Player image](./assets/img/musicplayer.png)
+Music is always present in my life, so on this site you can listen to my favorite songs.
 
-</div>
+<a href="https://guhrodriguess.github.io/music-player/">
+    <img src="./assets/img/musicplayer.png" />
+</a>
 
-<div align="center"><strong>Music Player</strong></div>
-<div align="center">Music is always present in my life, <br /> so on this site you can listen to my favorite songs. <br /> Access <a href="https://guhrodriguess.github.io/music-player/">here</a>.</div>
 
-<br />
-
-<div align="center">
-
-[![My Skills](https://skillicons.dev/icons?i=html,css,javascript)](https://skillicons.dev)
-
-</div>
