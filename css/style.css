@@ -1,9 +1,6 @@
-/*=====Fonts=====*/
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100&display=swap");
-/*===============*/
 
-/* Global Settings */
 :root {
   --bg-primary: #000;
   --bg-secondary: #111;
