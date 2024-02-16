@@ -40,28 +40,10 @@ const music_list = [
     music: "./assets/audio/dywc.mp3",
   },
   {
-    img: "./assets/img/music/ddr.jpg",
-    name: "Drip da Roça",
-    artist: "Reid, Doode, Teto, Ear Kid, Stef, Fabin",
-    music: "./assets/audio/ddr.mp3",
-  },
-  {
-    img: "./assets/img/music/mei.jpg",
-    name: "Melhor Eu Ir",
-    artist: "Péricles",
-    music: "./assets/audio/mei.mp3",
-  },
-  {
     img: "./assets/img/music/coopedup.jpg",
     name: "Cooped Up",
     artist: "Post Malone, Roddy Ricch",
     music: "./assets/audio/coopedup.mp3",
-  },
-  {
-    img: "./assets/img/music/diaazul.jpg",
-    name: "Dia Azul",
-    artist: "Teto",
-    music: "./assets/audio/diaazul.mp3",
   },
   {
     img: "./assets/img/music/payphone.jpg",
@@ -80,12 +62,6 @@ const music_list = [
     name: "Ballin'",
     artist: "Mustard, Roddy Ricch",
     music: "./assets/audio/ballin.mp3",
-  },
-  {
-    img: "./assets/img/music/pv.jpg",
-    name: "Pra Você",
-    artist: "Onze:20",
-    music: "./assets/audio/pv.mp3",
   },
   {
     img: "./assets/img/music/hb.jpg",
@@ -112,22 +88,16 @@ const music_list = [
     music: "./assets/audio/igb.mp3",
   },
   {
-    img: "./assets/img/music/war.jpg",
-    name: "War - Remix",
-    artist: "Filipe Ret, Orochi",
-    music: "./assets/audio/war.mp3",
-  },
-  {
     img: "./assets/img/music/ewtrtw.jpg",
     name: "Everybody Wants To Rule The World",
     artist: "Tears for Fears",
     music: "./assets/audio/ewtrtw.mp3",
   },
   {
-    img: "./assets/img/music/mv.jpg",
-    name: "Minha Vida",
-    artist: "Caio Luccas",
-    music: "./assets/audio/mv.mp3",
+    img: "./assets/img/music/pv.jpg",
+    name: "Pra Você",
+    artist: "Onze:20",
+    music: "./assets/audio/pv.mp3",
   },
   {
     img: "./assets/img/music/bl.png",
@@ -140,12 +110,6 @@ const music_list = [
     name: "Miracle",
     artist: "The Score",
     music: "./assets/audio/miracle.mp3",
-  },
-  {
-    img: "./assets/img/music/fv.jpg",
-    name: "Falta Você",
-    artist: "Thiaguinho",
-    music: "./assets/audio/fv.mp3",
   },
 ];
 
@@ -161,7 +125,7 @@ function loadTrack(track_index) {
   track_art.style.backgroundImage = "url(" + music_list[track_index].img + ")";
   track_artist.textContent = music_list[track_index].artist;
   track_name.textContent = music_list[track_index].name;
-  now_playing.textContent = track_index + 1 + " de " + music_list.length;
+  now_playing.textContent = track_index + 1 + " of " + music_list.length;
   updateTimer = setInterval(setUpdate, 1000);
   curr_track.addEventListener("ended", nextTrack);
 }
@@ -208,6 +172,7 @@ function playTrack() {
   isPlaying = true;
   track_art.classList.add("rotate");
   playpause_btn.innerHTML = '<i class="fa fa-pause-circle"></i>';
+  document.title = music_list[track_index].name;
 }
 
 // Pause Music Function
@@ -216,6 +181,7 @@ function pauseTrack() {
   isPlaying = false;
   track_art.classList.remove("rotate");
   playpause_btn.innerHTML = '<i class="fa fa-play-circle"></i>';
+  document.title = "Playlist — Gustavo Rodrigues";
 }
 
 // Next Music Function
