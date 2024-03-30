@@ -181,7 +181,7 @@ function pauseTrack() {
   isPlaying = false;
   track_art.classList.remove("rotate");
   playpause_btn.innerHTML = '<i class="fa fa-play-circle"></i>';
-  document.title = "Playlist — Gustavo Rodrigues";
+  document.title = "Gustavo's favorite songs";
 }
 
 // Next Music Function
